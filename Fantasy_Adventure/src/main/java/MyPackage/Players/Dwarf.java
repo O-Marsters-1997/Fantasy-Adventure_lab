@@ -1,4 +1,10 @@
 package MyPackage.Players;
 
-public class Dwarf {
+import MyPackage.WeaponType;
+
+public class Dwarf extends MeleeFighter {
+
+    public Dwarf(int healthPoints, int armour, int attack, WeaponType weaponType) {
+        super(healthPoints, armour, attack, weaponType);
+    }
 }
