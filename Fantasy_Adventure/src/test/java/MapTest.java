@@ -1,13 +1,12 @@
 import MyPackage.Map;
-import MyPackage.Player;
 import MyPackage.Players.Barbarian;
 import MyPackage.Players.Cleric;
+import MyPackage.Players.Enemy;
 import MyPackage.Room;
 import MyPackage.WeaponType;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.beans.Transient;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -22,14 +21,20 @@ public class MapTest {
     private Room room3;
     private Barbarian player1;
     private Cleric player2;
+    private Enemy enemy1;
+    private Enemy enemy2;
+    private Enemy enemy3;
 
 
     @Before
     public void before() {
         rooms = new ArrayList<>();
-        room1 = new Room();
-        room2 = new Room();
-        room3 = new Room();
+        enemy1 = new Enemy("Golem", 200, 10);
+        enemy2 = new Enemy("Harpy", 300, 20);
+        enemy3 = new Enemy("Fire hound", 400, 30);
+        room1 = new Room(enemy1);
+        room2 = new Room(enemy2);
+        room3 = new Room(enemy3);
         player1 = new Barbarian(500, 25, 50, WeaponType.AXE);
         player2 = new Cleric(750, 60, "Medicine");
         map = new Map(rooms, room1, player1, player2);

@@ -1,5 +1,7 @@
 package MyPackage;
 
+import MyPackage.Players.Enemy;
+
 import java.util.ArrayList;
 
 public class Map {
@@ -8,6 +10,7 @@ public class Map {
     private Room room;
     private Player player1;
     private Player player2;
+    private Enemy enemy;
 
     public Map(ArrayList<Room> rooms, Room room, Player player1, Player player2) {
         this.rooms = rooms;
@@ -51,5 +54,9 @@ public class Map {
         }else{
             removeRoom();
         }
+    }
+
+    public void play(Room room){
+        Enemy monster = room. 
     }
 }
